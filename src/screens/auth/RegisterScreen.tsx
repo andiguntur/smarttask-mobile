@@ -7,12 +7,17 @@ import {
   StyleSheet,
 } from 'react-native';
 
-export default function LoginScreen({ navigation }: any) {
+export default function RegisterScreen({ navigation }: any) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>
-        SmartTask Mobile
+        Register
       </Text>
+
+      <TextInput
+        placeholder="Full Name"
+        style={styles.input}
+      />
 
       <TextInput
         placeholder="Email"
@@ -27,16 +32,17 @@ export default function LoginScreen({ navigation }: any) {
 
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>
-          Login
+          Register
         </Text>
       </TouchableOpacity>
 
-      <TouchableOpacity onPress={() => navigation.navigate('Register')} >
+      <TouchableOpacity
+        onPress={() => navigation.navigate('Login')}
+      >
         <Text style={styles.link}>
-          Go to Register
+          Back to Login
         </Text>
       </TouchableOpacity>
-
     </View>
   );
 }
@@ -68,6 +74,7 @@ const styles = StyleSheet.create({
     padding: 15,
     borderRadius: 10,
     alignItems: 'center',
+    marginBottom: 20,
   },
 
   buttonText: {
@@ -78,7 +85,5 @@ const styles = StyleSheet.create({
   link: {
     textAlign: 'center',
     color: 'blue',
-    marginTop: 20,
   },
-  
 });
